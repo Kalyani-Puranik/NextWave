@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextWave | Premium AI Outreach & Revenue Acceleration</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STICKY NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">NextWave</a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#services" class="nav-link">Services</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link">Platform <i class="fas fa-chevron-down dropdown-icon"></i></span>
+                    <div class="dropdown-content">
+                        <a href="#workflow"><i class="fas fa-layer-group"></i> Workflow Engine</a>
+                        <a href="#dashboard"><i class="fas fa-chart-pie"></i> AI Dashboard</a>
+                        <a href="#case-studies"><i class="fas fa-analytics"></i> Case Studies</a>
+                    </div>
+                </div>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#book" class="nav-btn mobile-cta">Book Discovery</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon moon-icon"></i>
+                    <i class="fas fa-sun sun-icon"></i>
+                </button>
+                <a href="#book" class="nav-btn desktop-cta">Book Discovery</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="badge-premium"><span>Now Powered by NextWave Core v4.2</span></div>
+                <h1 class="hero-title">Intelligent Outreach. <span class="text-gradient">Unparalleled Scale.</span></h1>
+                <p class="hero-subtitle">NextWave engineers ultra-premium autonomous acquisition pipelines for enterprise B2B companies, transforming cold interactions into predictable, high-value revenue operations.</p>
+                
+                <div class="hero-ctas">
+                    <a href="#book" class="btn btn-primary">Scale Your Pipeline <i class="fas fa-arrow-right"></i></a>
+                    <a href="#dashboard" class="btn btn-secondary">Explore Dashboard</a>
+                </div>
+            </div>
+
+            <div class="hero-visual" id="heroVisual">
+                <div class="hero-glow-card">
+                    <div class="card-header">
+                        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                        <span class="window-title">nextwave_engine_core.sh</span>
+                    </div>
+                    <div class="card-body-dashboard">
+                        <div class="dashboard-metric">
+                            <span class="metric-label">Pipeline Health</span>
+                            <span class="metric-value text-gradient">99.4%</span>
+                        </div>
+                        <div class="mini-graph">
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 55%"></div>
+                            <div class="bar" style="height: 85%"></div>
+                            <div class="bar" style="height: 70%"></div>
+                            <div class="bar" style="height: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating KPI Cards -->
+                <div class="floating-kpi kpi-1">
+                    <div class="kpi-icon"><i class="fas fa-bolt"></i></div>
+                    <div>
+                        <p class="kpi-title">Response Optimization</p>
+                        <p class="kpi-stat">+342%</p>
+                    </div>
+                </div>
+                <div class="floating-kpi kpi-2">
+                    <div class="kpi-icon"><i class="fas fa-user-check"></i></div>
+                    <div>
+                        <p class="kpi-title">SQLs Generated Today</p>
+                        <p class="kpi-stat" id="kpiCounter">142</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="mouse"><span class="wheel"></span></span>
+        </div>
+    </section>
+
+    <!-- TRUST METRICS SECTION -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card counter-box">
+                    <h3 class="stat-number" data-target="14800">0</h3>
+                    <p class="stat-label">High-Value Meetings Booked</p>
+                </div>
+                <div class="metric-card counter-box">
+                    <h3 class="stat-number" data-target="84">0</h3>
+                    <p class="stat-label">Million Generated Revenue</p>
+                </div>
+                <div class="metric-card counter-box">
+                    <h3 class="stat-number" data-target="1200">0</h3>
+                    <p class="stat-label">Enterprise Campaigns Launched</p>
+                </div>
+                <div class="metric-card counter-box">
+                    <h3 class="stat-number" data-target="94">0</h3>
+                    <p class="stat-label">Average Conversion Uplift %</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES BENTO GRID -->
+    <section id="services" class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Elite Capabilities</span>
+                <h2 class="section-title">Architected for Conversion</h2>
+                <p class="section-desc">Our modular, hyper-focused revenue components operate natively together to build absolute pipeline dominance.</p>
+            </div>
+
+            <div class="bento-grid">
+                <div class="bento-item large-bento glow-hover">
+                    <div class="bento-icon"><i class="fas fa-calendar-star"></i></div>
+                    <div class="bento-content">
+                        <h3>Precision Appointment Setting</h3>
+                        <p>We do not pitch; we align. We secure calendar space exclusively with verified economic buyers and key decision-makers holding active budgets.</p>
+                        <span class="bento-stat">84% Attendance Rate Verified</span>
+                    </div>
+                </div>
+
+                <div class="bento-item glow-hover">
+                    <div class="bento-icon"><i class="fas fa-crosshairs"></i></div>
+                    <div class="bento-content">
+                        <h3>Hyper-Targeted Lead Gen</h3>
+                        <p>Deep intent analysis cross-referenced against complex organizational structures to pinpoint exact accounts.</p>
+                    </div>
+                </div>
+
+                <div class="bento-item glow-hover">
+                    <div class="bento-icon"><i class="fas fa-chart-line-up"></i></div>
+                    <div class="bento-content">
+                        <h3>Sales Acceleration</h3>
+                        <p>Compress complex multi-month pipeline transaction lifecycles into highly optimized decision matrices.</p>
+                    </div>
+                </div>
+
+                <div class="bento-item glow-hover">
+                    <div class="bento-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="bento-content">
+                        <h3>AI-Powered Outreach</h3>
+                        <p>Autonomous hyper-personalized semantic messaging systems that mimic enterprise-grade executives at scale.</p>
+                    </div>
+                </div>
+
+                <div class="bento-item large-bento glow-hover">
+                    <div class="bento-icon"><i class="fas fa-vault"></i></div>
+                    <div class="bento-content">
+                        <h3>Revenue Operations (RevOps)</h3>
+                        <p>Unify data infrastructures, pipeline governance, tooling sync loops, and strategic reporting layers under a unified automated stack architecture.</p>
+                        <span class="bento-stat">Zero Data Attrition Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE WORKFLOW TIMELINE -->
+    <section id="workflow" class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Execution Roadmap</span>
+                <h2 class="section-title">The Blueprint to Predictable Scale</h2>
+                <p class="section-desc">From initial digital discovery to autonomous performance loops, observe your scaling structure unfold.</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line">
+                    <div class="timeline-progress" id="timelineProgress"></div>
+                </div>
+                
+                <div class="timeline-steps">
+                    <div class="timeline-step active" data-step="1">
+                        <div class="step-node">1</div>
+                        <div class="step-card">
+                            <h3>01 / Discovery & Architecture</h3>
+                            <p>Deep-dive forensic calibration into your unit economics, TAM, and historical conversion blockages.</p>
+                            <div class="step-expandable">
+                                <p>We mapping out complex organizational buyer personas and craft initial value vectors before writing a single line of script.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="2">
+                        <div class="step-node">2</div>
+                        <div class="step-card">
+                            <h3>02 / Hyper-Targeted Strategy</h3>
+                            <p>Data modeling setups across intent signals, funding alerts, and granular target triggers.</p>
+                            <div class="step-expandable">
+                                <p>Isolating high-value target clusters and organizing continuous enrichment protocols to ensure accurate target alignment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="3">
+                        <div class="step-node">3</div>
+                        <div class="step-card">
+                            <h3>03 / Omnichannel Outreach</h3>
+                            <p>Coordinated micro-burst deployment across validated email domains, networks, and calls.</p>
+                            <div class="step-expandable">
+                                <p>Utilizing high-deliverability network pools alongside personalized programmatic assets to maximize visual mindshare.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="4">
+                        <div class="step-node">4</div>
+                        <div class="step-card">
+                            <h3>04 / Dynamic Qualification</h3>
+                            <p>Multilayered lead scrubbing to ensure zero pipeline leakage or misaligned opportunities.</p>
+                            <div class="step-expandable">
+                                <p>Filtering prospects strictly by authority metrics, clear financial allocation, timelines, and verified technical alignment layers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="5">
+                        <div class="step-node">5</div>
+                        <div class="step-card">
+                            <h3>05 / Automated Meetings</h3>
+                            <p>Direct premium calendar sync injection straight into your account executives' pipelines.</p>
+                            <div class="step-expandable">
+                                <p>Automating complete background briefings and account dossiers directly linked into the invites before standard handoff.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step" data-step="6">
+                        <div class="step-node">6</div>
+                        <div class="step-card">
+                            <h3>06 / Feedback Optimization</h3>
+                            <p>Continuous refinement loops processing pipeline analytics to boost enterprise yield.</p>
+                            <div class="step-expandable">
+                                <p>Feeding closed-won deal patterns backwards to recursively update messaging assets and targeting weights automatically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section id="case-studies" class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Proven Yields</span>
+                <h2 class="section-title">Validated Enterprise Growth</h2>
+                <p class="section-desc">Proof of execution via verified operational performance metrics across highly competitive global ecosystems.</p>
+            </div>
+
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-badge">SaaS Enterprise</div>
+                    <h3>SentryGlobal Tech</h3>
+                    <p class="case-brief">Scaling cross-continental pipeline architecture into modern cloud-native infrastructures.</p>
+                    <div class="case-metrics">
+                        <div class="cm-box">
+                            <span class="cm-val">+410%</span>
+                            <span class="cm-lbl">ROI Boost</span>
+                        </div>
+                        <div class="cm-box">
+                            <span class="cm-val">312</span>
+                            <span class="cm-lbl">SQLs Booked</span>
+                        </div>
+                        <div class="cm-box">
+                            <span class="cm-val">90 Days</span>
+                            <span class="cm-lbl">Timeline</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-badge">Fintech Infrastructure</div>
+                    <h3>AuraCapital Inc</h3>
+                    <p class="case-brief">Securing priority access pipelines into Tier-1 commercial banking investment groups.</p>
+                    <div class="case-metrics">
+                        <div class="cm-box">
+                            <span class="cm-val">$4.2M</span>
+                            <span class="cm-lbl">Pipeline Created</span>
+                        </div>
+                        <div class="cm-box">
+                            <span class="cm-val">184</span>
+                            <span class="cm-lbl">Demos Secured</span>
+                        </div>
+                        <div class="cm-box">
+                            <span class="cm-val">6 Months</span>
+                            <span class="cm-lbl">Timeline</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI DASHBOARD PREVIEW SECTION -->
+    <section id="dashboard" class="section dashboard-preview-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">The Dashboard Command Center</span>
+                <h2 class="section-title">Complete Pipeline Transparency</h2>
+                <p class="section-desc">Monitor pipeline acceleration metrics live through our clean, futuristic glassmorphic telemetry array.</p>
+            </div>
+
+            <div class="dashboard-mockup">
+                <div class="db-sidebar">
+                    <div class="db-logo">N_W</div>
+                    <div class="db-nav-items">
+                        <div class="db-item active"><i class="fas fa-chart-network"></i></div>
+                        <div class="db-item"><i class="fas fa-sliders-h"></i></div>
+                        <div class="db-item"><i class="fas fa-envelope-open-text"></i></div>
+                        <div class="db-item"><i class="fas fa-cog"></i></div>
+                    </div>
+                </div>
+                
+                <div class="db-main">
+                    <div class="db-topbar">
+                        <h4>System Performance Engine</h4>
+                        <div class="db-status"><span class="pulse-indicator"></span> Core Autonomous Operations Live</div>
+                    </div>
+                    
+                    <div class="db-metrics-row">
+                        <div class="db-mini-card">
+                            <span class="db-lbl">Outreach Frequency</span>
+                            <span class="db-val">94.2k/mo</span>
+                        </div>
+                        <div class="db-mini-card">
+                            <span class="db-lbl">Semantic Match %</span>
+                            <span class="db-val">98.7%</span>
+                        </div>
+                        <div class="db-mini-card">
+                            <span class="db-lbl">Forecasted MRR Expansion</span>
+                            <span class="db-val text-gradient">+$148k</span>
+                        </div>
+                    </div>
+
+                    <div class="db-chart-area">
+                        <svg viewBox="0 0 500 150" class="svg-chart">
+                            <defs>
+                                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="var(--primary-lavender)" stop-opacity="0.4"/>
+                                    <stop offset="100%" stop-color="var(--primary-lavender)" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M0,120 Q75,60 150,90 T300,30 T450,10 L500,5 L500,150 L0,150 Z" fill="url(#chartGrad)"/>
+                            <path d="M0,120 Q75,60 150,90 T300,30 T450,10 L500,5" fill="none" stroke="var(--primary-lavender)" stroke-width="3"/>
+                        </svg>
+                        <div class="chart-overlay-info">Conversion Velocity Optimized (+18.4% WoW)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="section testimonials-section reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Strategic Alliances</span>
+                <h2 class="section-title">Endorsed by Top Innovators</h2>
+                <p class="section-desc">Discover how modern scaling architectures leverage NextWave platforms for growth velocity.</p>
+            </div>
+
+            <div class="carousel-viewport">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="testimonial-card">
+                        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="t-text">"NextWave transformed our outreach mechanics. We discarded bloated agencies for their autonomous orchestration layout and experienced a 4x jump in targeted revenue meetings booked within a single quarter."</p>
+                        <div class="t-profile">
+                            <div class="t-info">
+                                <span class="t-name">Marcus Vance</span>
+                                <span class="t-role">VP of Sales, VektorLabs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="t-text">"The pure clarity and visibility offered by NextWave's data analytics layer is spectacular. Their high-touch intent signals helped our account executives lock down elite enterprise portfolios effortlessly."</p>
+                        <div class="t-profile">
+                            <div class="t-info">
+                                <span class="t-name">Elena Rostova</span>
+                                <span class="t-role">Chief Strategy Officer, Nucleus AI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="t-text">"Our internal growth teams spent months attempting pipeline acceleration configurations manually. NextWave solved that overhead setup overnight with pristine, automated pipelines."</p>
+                        <div class="t-profile">
+                            <div class="t-info">
+                                <span class="t-name">Devon Cross</span>
+                                <span class="t-role">Founder, Apex Ledger</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-nav">
+                    <button class="c-arrow prev" id="prevBtn" aria-label="Previous Testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button class="c-arrow next" id="nextBtn" aria-label="Next Testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="section reveal">
+        <div class="container small-container">
+            <div class="section-header">
+                <span class="section-tag">Information Architecture</span>
+                <h2 class="section-title">Frequently Answered Parameters</h2>
+            </div>
+
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <span>How does NextWave safeguard enterprise deliverability metrics?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>We leverage isolated custom tracking arrays, automated workspace warmup routines, and advanced context-aware message delivery intervals to ensure all communication lines maintain absolute top-tier domain health profiles.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <span>Can NextWave link directly with our pre-existing HubSpot or Salesforce deployments?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>Yes. Our systems natively sync through standard secure API layers, passing lead tracking states, diagnostic logs, and conversation timelines directly into your CRM layout without interrupting running processes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-trigger">
+                        <span>What specific industries yield the highest conversion velocity with this setup?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p>High-growth B2B enterprise software suites, specialized financial operations platforms, technical consulting operations, and logistics providers looking to lock down key contract values see optimal scale velocities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALENDLY / BOOKING CTA -->
+    <section id="book" class="section booking-section reveal">
+        <div class="glow-sphere sphere-3"></div>
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <h2 class="section-title">Secure Your Growth Architecture</h2>
+                    <p>Coordinate a strategy alignment call with a principal revenue architect. We will map your specific market metrics live on screen.</p>
+                    <div class="booking-promises">
+                        <div class="promise-item"><i class="fas fa-check-circle"></i> 30-Minute Architecture Audit</div>
+                        <div class="promise-item"><i class="fas fa-check-circle"></i> Complete Competitor Playbook Review</div>
+                    </div>
+                </div>
+                
+                <div class="booking-ui-mockup">
+                    <div class="ui-calendar-header">
+                        <span>Select Date & Time (EST)</span>
+                        <span class="ui-duration">30 min session</span>
+                    </div>
+                    <div class="ui-calendar-grid">
+                        <div class="cal-day empty"></div>
+                        <div class="cal-day empty"></div>
+                        <div class="cal-day">1</div>
+                        <div class="cal-day">2</div>
+                        <div class="cal-day active">3</div>
+                        <div class="cal-day">4</div>
+                        <div class="cal-day">5</div>
+                        <div class="cal-day">6</div>
+                        <div class="cal-day">7</div>
+                    </div>
+                    <div class="ui-time-slots">
+                        <button class="time-slot">09:00 AM</button>
+                        <button class="time-slot active">11:30 AM</button>
+                        <button class="time-slot">02:00 PM</button>
+                    </div>
+                    <button class="btn btn-primary booking-submit" id="bookingAction">Confirm Strategy Session <i class="fas fa-calendar-check"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="footer-logo">NextWave</a>
+                <p class="footer-moto">Automated revenue platforms engineered to perfection.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>System Architecture</h4>
+                <a href="#services">Services Suite</a>
+                <a href="#workflow">Workflow Engine</a>
+                <a href="#dashboard">Platform Dashboard</a>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Governance</h4>
+                <a href="#">Privacy Framework</a>
+                <a href="#">Terms of Architecture</a>
+                <a href="#">Security Infrastructure</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NextWave Operations Inc. Executed with premium accuracy.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
