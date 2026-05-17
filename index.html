@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <!-- FontAwesome for structural utility shapes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,11 +22,11 @@
             <div class="nav-menu" id="navMenu">
                 <a href="#services" class="nav-link">Services</a>
                 <div class="nav-dropdown">
-                    <span class="nav-link">Platform <i class="fas fa-chevron-down dropdown-icon"></i></span>
+                    <span class="nav-link">Platform <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></span>
                     <div class="dropdown-content">
-                        <a href="#workflow"><i class="fas fa-layer-group"></i> Workflow Engine</a>
-                        <a href="#dashboard"><i class="fas fa-chart-pie"></i> AI Dashboard</a>
-                        <a href="#case-studies"><i class="fas fa-analytics"></i> Case Studies</a>
+                        <a href="#workflow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg> Workflow Engine</a>
+                        <a href="#dashboard"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg> AI Dashboard</a>
+                        <a href="#case-studies"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg> Case Studies</a>
                     </div>
                 </div>
                 <a href="#faq" class="nav-link">FAQ</a>
@@ -35,8 +35,8 @@
 
             <div class="nav-actions">
                 <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
-                    <i class="fas fa-moon moon-icon"></i>
-                    <i class="fas fa-sun sun-icon"></i>
+                    <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                    <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
                 </button>
                 <a href="#book" class="nav-btn desktop-cta">Book Discovery</a>
                 <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
@@ -60,46 +60,55 @@
                 <p class="hero-subtitle">NextWave engineers ultra-premium autonomous acquisition pipelines for enterprise B2B companies, transforming cold interactions into predictable, high-value revenue operations.</p>
                 
                 <div class="hero-ctas">
-                    <a href="#book" class="btn btn-primary">Scale Your Pipeline <i class="fas fa-arrow-right"></i></a>
+                    <a href="#book" class="btn btn-primary">Scale Your Pipeline <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     <a href="#dashboard" class="btn btn-secondary">Explore Dashboard</a>
                 </div>
             </div>
 
             <div class="hero-visual" id="heroVisual">
-                <div class="hero-glow-card">
-                    <div class="card-header">
-                        <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-                        <span class="window-title">nextwave_engine_core.sh</span>
-                    </div>
-                    <div class="card-body-dashboard">
-                        <div class="dashboard-metric">
-                            <span class="metric-label">Pipeline Health</span>
-                            <span class="metric-value text-gradient">99.4%</span>
+                <div class="hero-composition-wrapper">
+                    <!-- Layered Anchored Interface Layout -->
+                    <div class="hero-glow-card">
+                        <div class="card-header">
+                            <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                            <span class="window-title">nextwave_engine_core.sh</span>
                         </div>
-                        <div class="mini-graph">
-                            <div class="bar" style="height: 40%"></div>
-                            <div class="bar" style="height: 60%"></div>
-                            <div class="bar" style="height: 55%"></div>
-                            <div class="bar" style="height: 85%"></div>
-                            <div class="bar" style="height: 70%"></div>
-                            <div class="bar" style="height: 100%"></div>
+                        <div class="card-body-dashboard">
+                            <div class="dashboard-metric">
+                                <span class="metric-label">Pipeline Health</span>
+                                <span class="metric-value text-gradient">99.4%</span>
+                            </div>
+                            <div class="mini-graph">
+                                <div class="bar" style="height: 40%"></div>
+                                <div class="bar" style="height: 60%"></div>
+                                <div class="bar" style="height: 55%"></div>
+                                <div class="bar" style="height: 85%"></div>
+                                <div class="bar" style="height: 70%"></div>
+                                <div class="bar" style="height: 100%"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Floating KPI Cards -->
-                <div class="floating-kpi kpi-1">
-                    <div class="kpi-icon"><i class="fas fa-bolt"></i></div>
-                    <div>
-                        <p class="kpi-title">Response Optimization</p>
-                        <p class="kpi-stat">+342%</p>
+                    <!-- Integrated Anchored KPI Card 1 -->
+                    <div class="integrated-kpi kpi-hero-1">
+                        <div class="kpi-icon-wrapper">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                        </div>
+                        <div class="kpi-text-block">
+                            <p class="kpi-title">Response Optimization</p>
+                            <p class="kpi-stat text-gradient">+342%</p>
+                        </div>
                     </div>
-                </div>
-                <div class="floating-kpi kpi-2">
-                    <div class="kpi-icon"><i class="fas fa-user-check"></i></div>
-                    <div>
-                        <p class="kpi-title">SQLs Generated Today</p>
-                        <p class="kpi-stat" id="kpiCounter">142</p>
+
+                    <!-- Integrated Anchored KPI Card 2 -->
+                    <div class="integrated-kpi kpi-hero-2">
+                        <div class="kpi-icon-wrapper">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div class="kpi-text-block">
+                            <p class="kpi-title">SQLs Generated Today</p>
+                            <p class="kpi-stat" id="kpiCounter">142</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -108,6 +117,9 @@
             <span class="mouse"><span class="wheel"></span></span>
         </div>
     </section>
+
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
 
     <!-- TRUST METRICS SECTION -->
     <section class="metrics-section">
@@ -133,6 +145,9 @@
         </div>
     </section>
 
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
+
     <!-- SERVICES BENTO GRID -->
     <section id="services" class="section reveal">
         <div class="container">
@@ -144,7 +159,9 @@
 
             <div class="bento-grid">
                 <div class="bento-item large-bento glow-hover">
-                    <div class="bento-icon"><i class="fas fa-calendar-star"></i></div>
+                    <div class="bento-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y1="6"/><line x1="8" x2="8" y1="2" y1="6"/><line x1="3" x2="21" y1="10" y1="10"/><path d="m9 16 2 2 4-4"/></svg>
+                    </div>
                     <div class="bento-content">
                         <h3>Precision Appointment Setting</h3>
                         <p>We do not pitch; we align. We secure calendar space exclusively with verified economic buyers and key decision-makers holding active budgets.</p>
@@ -153,31 +170,56 @@
                 </div>
 
                 <div class="bento-item glow-hover">
-                    <div class="bento-icon"><i class="fas fa-crosshairs"></i></div>
+                    <div class="bento-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
                     <div class="bento-content">
                         <h3>Hyper-Targeted Lead Gen</h3>
                         <p>Deep intent analysis cross-referenced against complex organizational structures to pinpoint exact accounts.</p>
                     </div>
                 </div>
 
-                <div class="bento-item glow-hover">
-                    <div class="bento-icon"><i class="fas fa-chart-line-up"></i></div>
-                    <div class="bento-content">
-                        <h3>Sales Acceleration</h3>
-                        <p>Compress complex multi-month pipeline transaction lifecycles into highly optimized decision matrices.</p>
+                <!-- PREVIOUSLY VACANT EX-HOLE FILLED WITH PRE-CONFIGURED LOUVRE ANALYTICS CARD -->
+                <div class="bento-item live-panel-bento glow-hover">
+                    <div class="live-panel-header">
+                        <span class="live-tag"><span class="live-pulse"></span> Live Core Optimization</span>
+                        <span class="live-val-metric">94.8% Match</span>
                     </div>
+                    <div class="live-chart-mini">
+                        <div class="mini-trace-bar" style="--h: 30%"></div>
+                        <div class="mini-trace-bar" style="--h: 50%"></div>
+                        <div class="mini-trace-bar" style="--h: 85%"></div>
+                        <div class="mini-trace-bar" style="--h: 40%"></div>
+                        <div class="mini-trace-bar" style="--h: 70%"></div>
+                        <div class="mini-trace-bar" style="--h: 95%"></div>
+                    </div>
+                    <p class="live-panel-desc">Real-time target alignment engine running multi-layered validation logic down to specific functional domains.</p>
                 </div>
 
                 <div class="bento-item glow-hover">
-                    <div class="bento-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="bento-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+                    </div>
                     <div class="bento-content">
                         <h3>AI-Powered Outreach</h3>
                         <p>Autonomous hyper-personalized semantic messaging systems that mimic enterprise-grade executives at scale.</p>
                     </div>
                 </div>
 
+                <div class="bento-item glow-hover">
+                    <div class="bento-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m22 7-8.5 8.5-5-5L2 18"/><path d="M16 7h6v6"/></svg>
+                    </div>
+                    <div class="bento-content">
+                        <h3>Sales Acceleration</h3>
+                        <p>Compress complex multi-month pipeline transaction lifecycles into highly optimized decision matrices.</p>
+                    </div>
+                </div>
+
                 <div class="bento-item large-bento glow-hover">
-                    <div class="bento-icon"><i class="fas fa-vault"></i></div>
+                    <div class="bento-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                    </div>
                     <div class="bento-content">
                         <h3>Revenue Operations (RevOps)</h3>
                         <p>Unify data infrastructures, pipeline governance, tooling sync loops, and strategic reporting layers under a unified automated stack architecture.</p>
@@ -187,6 +229,9 @@
             </div>
         </div>
     </section>
+
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
 
     <!-- INTERACTIVE WORKFLOW TIMELINE -->
     <section id="workflow" class="section reveal">
@@ -270,8 +315,18 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ENHANCED TERMINATION BRIDGE VISUAL TRANSITION ELEMENT -->
+            <div class="timeline-termination-closure">
+                <div class="closure-glow-dot"></div>
+                <div class="closure-line-taper"></div>
+                <div class="closure-message-badge">System Pipeline Integrates Seamlessly Below</div>
+            </div>
         </div>
     </section>
+
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
 
     <!-- CASE STUDIES SECTION -->
     <section id="case-studies" class="section reveal">
@@ -326,7 +381,10 @@
         </div>
     </section>
 
-    <!-- AI DASHBOARD PREVIEW SECTION -->
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
+
+    <!-- AI DASHBOARD PREVIEW SECTION (COMPLETELY ELEVATED TO VERCEL/STRIPE STANDARD RECOGNITIONS) -->
     <section id="dashboard" class="section dashboard-preview-section reveal">
         <div class="container">
             <div class="section-header">
@@ -335,55 +393,89 @@
                 <p class="section-desc">Monitor pipeline acceleration metrics live through our clean, futuristic glassmorphic telemetry array.</p>
             </div>
 
-            <div class="dashboard-mockup">
-                <div class="db-sidebar">
-                    <div class="db-logo">N_W</div>
-                    <div class="db-nav-items">
-                        <div class="db-item active"><i class="fas fa-chart-network"></i></div>
-                        <div class="db-item"><i class="fas fa-sliders-h"></i></div>
-                        <div class="db-item"><i class="fas fa-envelope-open-text"></i></div>
-                        <div class="db-item"><i class="fas fa-cog"></i></div>
-                    </div>
-                </div>
-                
-                <div class="db-main">
-                    <div class="db-topbar">
-                        <h4>System Performance Engine</h4>
-                        <div class="db-status"><span class="pulse-indicator"></span> Core Autonomous Operations Live</div>
+            <!-- THE ADVANCED TELEMETRY UNIX GRID SYSTEM -->
+            <div class="dashboard-mockup-wrapper">
+                <div class="dashboard-mockup">
+                    <div class="db-sidebar">
+                        <div class="db-logo">N_W</div>
+                        <div class="db-nav-items">
+                            <div class="db-item active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+                            <div class="db-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+                            <div class="db-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8Z"/><path d="M12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></div>
+                            <div class="db-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                        </div>
                     </div>
                     
-                    <div class="db-metrics-row">
-                        <div class="db-mini-card">
-                            <span class="db-lbl">Outreach Frequency</span>
-                            <span class="db-val">94.2k/mo</span>
+                    <div class="db-main">
+                        <div class="db-topbar">
+                            <div class="db-title-area">
+                                <h4>System Performance Engine</h4>
+                                <span class="db-sub-telemetry">Node Cluster: US-EAST-4 &bull; Shards Active</span>
+                            </div>
+                            <div class="db-status"><span class="pulse-indicator"></span> Core Autonomous Operations Live</div>
                         </div>
-                        <div class="db-mini-card">
-                            <span class="db-lbl">Semantic Match %</span>
-                            <span class="db-val">98.7%</span>
+                        
+                        <div class="db-metrics-row">
+                            <div class="db-mini-card">
+                                <div class="db-mini-card-header">
+                                    <span class="db-lbl">Outreach Frequency</span>
+                                    <span class="db-trend up">+12.3%</span>
+                                </div>
+                                <span class="db-val">94.2k/mo</span>
+                            </div>
+                            <div class="db-mini-card">
+                                <div class="db-mini-card-header">
+                                    <span class="db-lbl">Semantic Match %</span>
+                                    <span class="db-trend normal">Stable</span>
+                                </div>
+                                <span class="db-val">98.7%</span>
+                            </div>
+                            <div class="db-mini-card text-highlight-card">
+                                <div class="db-mini-card-header">
+                                    <span class="db-lbl">Forecasted Expansion</span>
+                                    <span class="db-trend optimization-glow">AI Optimal</span>
+                                </div>
+                                <span class="db-val text-gradient">+$148k</span>
+                            </div>
                         </div>
-                        <div class="db-mini-card">
-                            <span class="db-lbl">Forecasted MRR Expansion</span>
-                            <span class="db-val text-gradient">+$148k</span>
+
+                        <!-- ADVANCED PRODUCTION GRADE CHART LAYER -->
+                        <div class="db-chart-area">
+                            <div class="db-grid-background-lines"></div>
+                            <svg viewBox="0 0 500 150" class="svg-chart" preserveAspectRatio="none">
+                                <defs>
+                                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="var(--primary-lavender)" stop-opacity="0.35"/>
+                                        <stop offset="100%" stop-color="var(--primary-lavender)" stop-opacity="0.0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,130 Q50,90 100,105 T200,60 T300,75 T400,25 L500,15 L500,150 L0,150 Z" fill="url(#chartGrad)"/>
+                                <path d="M0,130 Q50,90 100,105 T200,60 T300,75 T400,25 L500,15" fill="none" stroke="var(--primary-lavender)" stroke-width="2.5" stroke-linecap="round"/>
+                                
+                                <!-- Secondary Comparative Node Trace Metric Line -->
+                                <path d="M0,140 Q60,110 120,115 T240,80 T360,85 T480,45 L500,35" fill="none" stroke="var(--accent-blue)" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6"/>
+                            </svg>
+                            <div class="chart-overlay-info">Conversion Velocity Optimized (+18.4% WoW)</div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="db-chart-area">
-                        <svg viewBox="0 0 500 150" class="svg-chart">
-                            <defs>
-                                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="var(--primary-lavender)" stop-opacity="0.4"/>
-                                    <stop offset="100%" stop-color="var(--primary-lavender)" stop-opacity="0"/>
-                                </linearGradient>
-                            </defs>
-                            <path d="M0,120 Q75,60 150,90 T300,30 T450,10 L500,5 L500,150 L0,150 Z" fill="url(#chartGrad)"/>
-                            <path d="M0,120 Q75,60 150,90 T300,30 T450,10 L500,5" fill="none" stroke="var(--primary-lavender)" stroke-width="3"/>
-                        </svg>
-                        <div class="chart-overlay-info">Conversion Velocity Optimized (+18.4% WoW)</div>
+                <!-- CONTEXTUALLY INTEGRATED ANCHORED INSIGHT CARD 3 -->
+                <div class="integrated-kpi kpi-dashboard-overlay">
+                    <div class="kpi-icon-wrapper update-glow-bg">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <div>
+                        <p class="kpi-title">Anomaly Protection</p>
+                        <p class="kpi-stat text-success">Active &bull; 0 Failures</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
 
     <!-- TESTIMONIALS SECTION -->
     <section class="section testimonials-section reveal">
@@ -397,7 +489,13 @@
             <div class="carousel-viewport">
                 <div class="carousel-track" id="carouselTrack">
                     <div class="testimonial-card">
-                        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="t-stars">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
                         <p class="t-text">"NextWave transformed our outreach mechanics. We discarded bloated agencies for their autonomous orchestration layout and experienced a 4x jump in targeted revenue meetings booked within a single quarter."</p>
                         <div class="t-profile">
                             <div class="t-info">
@@ -408,7 +506,13 @@
                     </div>
 
                     <div class="testimonial-card">
-                        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <div class="t-stars">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
                         <p class="t-text">"The pure clarity and visibility offered by NextWave's data analytics layer is spectacular. Their high-touch intent signals helped our account executives lock down elite enterprise portfolios effortlessly."</p>
                         <div class="t-profile">
                             <div class="t-info">
@@ -417,26 +521,18 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="testimonial-card">
-                        <div class="t-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="t-text">"Our internal growth teams spent months attempting pipeline acceleration configurations manually. NextWave solved that overhead setup overnight with pristine, automated pipelines."</p>
-                        <div class="t-profile">
-                            <div class="t-info">
-                                <span class="t-name">Devon Cross</span>
-                                <span class="t-role">Founder, Apex Ledger</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="carousel-nav">
-                    <button class="c-arrow prev" id="prevBtn" aria-label="Previous Testimonial"><i class="fas fa-chevron-left"></i></button>
-                    <button class="c-arrow next" id="nextBtn" aria-label="Next Testimonial"><i class="fas fa-chevron-right"></i></button>
+                    <button class="c-arrow prev" id="prevBtn" aria-label="Previous Testimonial"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg></button>
+                    <button class="c-arrow next" id="nextBtn" aria-label="Next Testimonial"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg></button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
 
     <!-- FAQ SECTION -->
     <section id="faq" class="section reveal">
@@ -450,7 +546,7 @@
                 <div class="faq-item">
                     <div class="faq-trigger">
                         <span>How does NextWave safeguard enterprise deliverability metrics?</span>
-                        <i class="fas fa-plus faq-icon"></i>
+                        <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14"/></svg>
                     </div>
                     <div class="faq-content">
                         <p>We leverage isolated custom tracking arrays, automated workspace warmup routines, and advanced context-aware message delivery intervals to ensure all communication lines maintain absolute top-tier domain health profiles.</p>
@@ -460,27 +556,20 @@
                 <div class="faq-item">
                     <div class="faq-trigger">
                         <span>Can NextWave link directly with our pre-existing HubSpot or Salesforce deployments?</span>
-                        <i class="fas fa-plus faq-icon"></i>
+                        <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5v14"/></svg>
                     </div>
                     <div class="faq-content">
                         <p>Yes. Our systems natively sync through standard secure API layers, passing lead tracking states, diagnostic logs, and conversation timelines directly into your CRM layout without interrupting running processes.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-trigger">
-                        <span>What specific industries yield the highest conversion velocity with this setup?</span>
-                        <i class="fas fa-plus faq-icon"></i>
-                    </div>
-                    <div class="faq-content">
-                        <p>High-growth B2B enterprise software suites, specialized financial operations platforms, technical consulting operations, and logistics providers looking to lock down key contract values see optimal scale velocities.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CALENDLY / BOOKING CTA -->
+    <!-- SECTION TERMINATOR TRANSITION: GRADIENT BLENDER BRIDGE -->
+    <div class="section-bridge-gradient"></div>
+
+    <!-- CALENDLY / REDESIGNED SCHEDULING INTERFACE -->
     <section id="book" class="section booking-section reveal">
         <div class="glow-sphere sphere-3"></div>
         <div class="container">
@@ -489,33 +578,33 @@
                     <h2 class="section-title">Secure Your Growth Architecture</h2>
                     <p>Coordinate a strategy alignment call with a principal revenue architect. We will map your specific market metrics live on screen.</p>
                     <div class="booking-promises">
-                        <div class="promise-item"><i class="fas fa-check-circle"></i> 30-Minute Architecture Audit</div>
-                        <div class="promise-item"><i class="fas fa-check-circle"></i> Complete Competitor Playbook Review</div>
+                        <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg> 30-Minute Architecture Audit</div>
+                        <div class="promise-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg> Complete Competitor Playbook Review</div>
                     </div>
                 </div>
                 
+                <!-- REDESIGNED FULL LUXURY-TECH MONTHLY CALENDAR ARRAY UI -->
                 <div class="booking-ui-mockup">
                     <div class="ui-calendar-header">
-                        <span>Select Date & Time (EST)</span>
-                        <span class="ui-duration">30 min session</span>
+                        <span class="ui-calendar-month-title">October 2026</span>
+                        <span class="ui-duration">30 min architecture session</span>
                     </div>
-                    <div class="ui-calendar-grid">
-                        <div class="cal-day empty"></div>
-                        <div class="cal-day empty"></div>
-                        <div class="cal-day">1</div>
-                        <div class="cal-day">2</div>
-                        <div class="cal-day active">3</div>
-                        <div class="cal-day">4</div>
-                        <div class="cal-day">5</div>
-                        <div class="cal-day">6</div>
-                        <div class="cal-day">7</div>
+                    
+                    <div class="ui-calendar-days-meta">
+                        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
                     </div>
+                    
+                    <div class="ui-calendar-grid" id="calendarGridArray">
+                        <!-- Dynamic grid rendering handled natively inside core engine structure -->
+                    </div>
+                    
+                    <div class="ui-time-slots-heading">Available Slots (EST)</div>
                     <div class="ui-time-slots">
                         <button class="time-slot">09:00 AM</button>
                         <button class="time-slot active">11:30 AM</button>
                         <button class="time-slot">02:00 PM</button>
                     </div>
-                    <button class="btn btn-primary booking-submit" id="bookingAction">Confirm Strategy Session <i class="fas fa-calendar-check"></i></button>
+                    <button class="btn btn-primary booking-submit" id="bookingAction">Confirm Strategy Session <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y1="6"/><line x1="8" x2="8" y1="2" y1="6"/><line x1="3" x2="21" y1="10" y1="10"/></svg></button>
                 </div>
             </div>
         </div>
@@ -527,11 +616,6 @@
             <div class="footer-brand">
                 <a href="#" class="footer-logo">NextWave</a>
                 <p class="footer-moto">Automated revenue platforms engineered to perfection.</p>
-                <div class="footer-socials">
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
             </div>
             
             <div class="footer-links-col">
