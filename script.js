@@ -1,231 +1,226 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // --- LIGHT/DARK THEME TOGGLE ENGINE ---
-    const themeToggle = document.getElementById('themeToggle');
-    const htmlElement = document.documentElement;
-
-    const storedTheme = localStorage.getItem('theme') || 'dark';
-    htmlElement.setAttribute('data-theme', storedTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = htmlElement.getAttribute('data-theme');
-        const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        htmlElement.setAttribute('data-theme', nextTheme);
-        localStorage.setItem('theme', nextTheme);
-    });
-
-    // --- MOBILE BURGER NAVIGATION ENGINE ---
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
-    const navLinks = document.querySelectorAll('.nav-link, .dropdown-content a');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
-        navMenu.classList.toggle('open');
-        
-        // Native burger UI layout response state transformations
-        const spanLines = hamburger.querySelectorAll('span');
-        if(hamburger.classList.contains('open')) {
-            spanLines[0].style.transform = 'rotate(45deg) translateY(6px) translateX(5px)';
-            spanLines[1].style.opacity = '0';
-            spanLines[2].style.transform = 'rotate(-45deg) translateY(-6px) translateX(5px)';
-        } else {
-            spanLines[0].style.transform = 'none';
-            spanLines[1].style.opacity = '1';
-            spanLines[2].style.transform = 'none';
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('open');
-            navMenu.classList.remove('open');
-            hamburger.querySelectorAll('span').forEach(s => s.style.transform = 'none');
-            hamburger.querySelectorAll('span')[1].style.opacity = '1';
-        });
-    });
-
-    // --- HIGH-FIDELITY LUXURY REALISTIC CALENDAR SCHEDULER GENERATOR ---
-    const calendarGridArray = document.getElementById('calendarGridArray');
     
-    if (calendarGridArray) {
-        // Build actual complete 35-day structure for October 2026 (Begins on Thursday)
-        const totalCells = 35;
-        const leadingBlanks = 4; // Sun, Mon, Tue, Wed are blank padding
-        const totalDaysInMonth = 31;
-        
-        let calendarHTMLString = '';
-        
-        // Render leading trailing dead cell offsets
-        for (let i = 27; i < 27 + leadingBlanks; i++) {
-            calendarHTMLString += `<div class="cal-day-unit inactive-month-day">${i}</div>`;
-        }
-        
-        // Render regular authentic active calendar days
-        for (let dayNum = 1; dayNum <= totalDaysInMonth; dayNum++) {
-            // Setup conversion realistic design optimization parameters (Exclude select days)
-            const isBookable = dayNum % 7 !== 0 && dayNum % 7 !== 1 && dayNum > 2; 
-            const selectionClass = dayNum === 14 ? 'bookable-day-node selected-active-day' : isBookable ? 'bookable-day-node' : '';
-            
-            calendarHTMLString += `<div class="cal-day-unit ${selectionClass}">${dayNum}</div>`;
-        }
-        
-        calendarGridArray.innerHTML = calendarHTMLString;
+    // ==========================================================================
+    // STATE REGISTRY
+    // ==========================================================================
+    let selectedDateState = null;
+    let selectedTimeState = null;
 
-        // Attach event dynamic active listener loops directly onto node vectors
-        const bookableNodes = calendarGridArray.querySelectorAll('.bookable-day-node');
-        bookableNodes.forEach(node => {
-            node.addEventListener('click', () => {
-                bookableNodes.forEach(n => n.classList.remove('selected-active-day'));
-                node.classList.add('selected-active-day');
+    const timeSlotPoolTable = {
+        typical: ['09:00 AM', '10:30 AM', '01:00 PM', '03:30 PM'],
+        limited: ['11:00 AM', '02:00 PM'],
+        packed:  ['08:30 AM', '10:00 AM', '11:30 AM', '04:00 PM', '05:30 PM']
+    };
+
+    // ==========================================================================
+    // DOM CACHE REGISTRY
+    // ==========================================================================
+    const calendarGrid    = document.getElementById('calendarGrid');
+    const timeSlotsContainer = document.getElementById('timeSlotsContainer');
+    const bookingAction   = document.getElementById('bookingAction');
+    const bookingFeedback = document.getElementById('bookingFeedback');
+    const heroVisual      = document.getElementById('heroVisual');
+
+    // ==========================================================================
+    // INITIALIZATION PIPELINE
+    // ==========================================================================
+    const initApp = () => {
+        buildCalendarDOM();
+        initTimelineAccordion();
+        initScrollIntersectionObserver();
+    };
+
+    // ==========================================================================
+    // CALENDAR MATRIX GENERATION Engine
+    // ==========================================================================
+    const buildCalendarDOM = () => {
+        if (!calendarGrid) return;
+        calendarGrid.innerHTML = '';
+
+        // Generate structural paddings for previous month boundary offset
+        for (let i = 0; i < 2; i++) {
+            const blankNode = document.createElement('div');
+            blankNode.className = 'cal-day-unit';
+            calendarGrid.appendChild(blankNode);
+        }
+
+        // Build Active Bookable Nodes
+        for (let day = 1; day <= 28; day++) {
+            const dayNode = document.createElement('div');
+            dayNode.className = 'cal-day-unit bookable-day-node';
+            dayNode.innerText = day;
+            dayNode.setAttribute('data-day', day);
+
+            dayNode.addEventListener('click', (e) => handleDaySelection(e, day));
+            calendarGrid.appendChild(dayNode);
+        }
+    };
+
+    const handleDaySelection = (event, day) => {
+        const target = event.currentTarget;
+        
+        // Remove prior active structural classes safely
+        document.querySelectorAll('.bookable-day-node').forEach(node => {
+            node.classList.remove('selected-active-day');
+        });
+
+        // Mutate local state & bind presentation styles
+        target.classList.add('selected-active-day');
+        selectedDateState = day;
+        
+        // Synchronize and cascade down to time engine elements
+        updateAvailableSlotsUI(day);
+    };
+
+    // ==========================================================================
+    // TIME SLOTS CASCADING STAGGER ENGINE
+    // ==========================================================================
+    const updateAvailableSlotsUI = (day) => {
+        selectedTimeState = null; 
+        bookingAction.disabled = true;
+        bookingAction.innerText = 'Select a Time Slot';
+        
+        // Dynamic availability parsing logic
+        let chosenPool = timeSlotPoolTable.typical;
+        if (day % 3 === 0) chosenPool = timeSlotPoolTable.limited;
+        if (day % 5 === 0) chosenPool = timeSlotPoolTable.packed;
+        
+        timeSlotsContainer.innerHTML = ''; 
+
+        chosenPool.forEach((timeStr, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'time-slot';
+            btn.setAttribute('data-time', timeStr);
+            btn.innerText = timeStr;
+            
+            // Inline Hardware Vector Pre-styling for Cascading Animation Stagger
+            btn.style.opacity = '0';
+            btn.style.transform = 'translate3d(0, 16px, 0)';
+            btn.style.transition = 'opacity 0.5s var(--ease-premium), transform 0.5s var(--ease-premium), background-color 0.3s var(--ease-premium), border-color 0.3s var(--ease-premium), color 0.3s var(--ease-premium)';
+            
+            timeSlotsContainer.appendChild(btn);
+
+            // Sequential Execution Frame Rendering
+            setTimeout(() => {
+                btn.style.opacity = '1';
+                btn.style.transform = 'translate3d(0, 0, 0)';
+            }, index * 45); // Elegant, micro-staggered cascade window delay
+        });
+
+        // Register event hooks to the newly created time slots
+        const slotButtons = timeSlotsContainer.querySelectorAll('.time-slot');
+        slotButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                slotButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedTimeState = btn.getAttribute('data-time');
+                
+                bookingAction.disabled = false;
+                bookingAction.innerText = `Confirm Appointment: Oct ${selectedDateState} @ ${selectedTimeState}`;
+                
+                // Clear state warnings cleanly
+                bookingFeedback.className = 'booking-feedback-msg';
+                bookingFeedback.innerText = '';
             });
+        });
+    };
+
+    // Form submission processing pipeline
+    if (bookingAction) {
+        bookingAction.addEventListener('click', () => {
+            if (!selectedDateState || !selectedTimeState) return;
+
+            bookingFeedback.innerText = `Processing confirmation request...`;
+            bookingFeedback.className = 'booking-feedback-msg success-state';
+
+            setTimeout(() => {
+                bookingFeedback.innerText = `Success! Appointment confirmed for October ${selectedDateState} at ${selectedTimeState}.`;
+                bookingFeedback.className = 'booking-feedback-msg success-state';
+            }, 850);
         });
     }
 
-    // --- TIMELINE EXPERIMENTAL DEPTH ENGINE PROGRESS TRACKING ---
-    const timelineSteps = document.querySelectorAll('.timeline-step');
-    const timelineProgress = document.getElementById('timelineProgress');
+    // ==========================================================================
+    // ACCORDION EXPANSION ENGINE (WITH LAYOUT FLUIDITY)
+    // ==========================================================================
+    const initTimelineAccordion = () => {
+        const steps = document.querySelectorAll('.timeline-step');
+        
+        steps.forEach(step => {
+            const header = step.querySelector('.step-header');
+            const expandable = step.querySelector('.step-expandable');
 
-    timelineSteps.forEach((step, index) => {
-        const card = step.querySelector('.step-card');
-        card.addEventListener('click', () => {
-            step.classList.toggle('expanded');
-            
-            // Recalculate physical scroll progress line metric depths
-            const allExpandedNodes = document.querySelectorAll('.timeline-step.expanded');
-            if (timelineProgress) {
-                const totalStepsCount = timelineSteps.length;
-                let deepestActiveIndex = 0;
-                
-                timelineSteps.forEach((s, idx) => {
-                    if(s.classList.contains('expanded') || idx === 0) {
-                        deepestActiveIndex = idx;
-                    }
+            header.addEventListener('click', () => {
+                const isExpanded = step.classList.contains('expanded');
+
+                // Cleanly collapse alternative open states (Mutex Layout Logic)
+                steps.forEach(s => {
+                    s.classList.remove('expanded');
+                    s.querySelector('.step-expandable').style.maxHeight = null;
                 });
-                
-                const factorPercent = (deepestActiveIndex / (totalStepsCount - 1)) * 100;
-                timelineProgress.style.height = `${factorPercent}%`;
-            }
-        });
-    });
 
-    // --- CURSOR REACTIVE MOUSE GLOW PARALLAX (HERO TILT MODULATION) ---
-    const heroVisual = document.getElementById('heroVisual');
+                if (!isExpanded) {
+                    step.classList.add('expanded');
+                    // Compute accurate layout bounds dynamically without forcing hard code rewrites
+                    expandable.style.maxHeight = expandable.scrollHeight + "px";
+                }
+            });
+        });
+    };
+
+    // ==========================================================================
+    // 3D PARALLAX TELEMETRY MATRIX CONTROLLER
+    // ==========================================================================
     if (heroVisual) {
+        let frameTrackingId = null;
+        const card = heroVisual.querySelector('.hero-glow-card');
+        
         heroVisual.addEventListener('mousemove', (e) => {
-            const { left, top, width, height } = heroVisual.getBoundingClientRect();
-            const x = (e.clientX - left) - width / 2;
-            const y = (e.clientY - top) - height / 2;
+            if (frameTrackingId) cancelAnimationFrame(frameTrackingId);
             
-            const card = heroVisual.querySelector('.hero-glow-card');
-            if (card) {
-                card.style.transform = `rotateY(${x * 0.025}deg) rotateX(${-y * 0.025}deg) translateY(${-y * 0.01}px)`;
-            }
+            frameTrackingId = requestAnimationFrame(() => {
+                const rect = heroVisual.getBoundingClientRect();
+                const x = (e.clientX - rect.left) - rect.width / 2;
+                const y = (e.clientY - rect.top) - rect.height / 2;
+                
+                if (card) {
+                    // Precision angular dampening multiplier matrix
+                    card.style.transform = `rotateY(${x * 0.02}deg) rotateX(${-y * 0.02}deg) translate3d(${-x * 0.015}px, ${-y * 0.015}px, 15px)`;
+                    card.style.boxShadow = `${-x * 0.05}px ${-y * 0.05}px 30px rgba(168, 85, 247, 0.15)`;
+                }
+            });
         });
         
         heroVisual.addEventListener('mouseleave', () => {
-            const card = heroVisual.querySelector('.hero-glow-card');
+            if (frameTrackingId) cancelAnimationFrame(frameTrackingId);
             if (card) {
-                card.style.transform = 'rotateY(0deg) rotateX(0deg) translateY(0px)';
+                card.style.transform = 'rotateY(0deg) rotateX(0deg) translate3d(0, 0, 0)';
+                card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
             }
         });
     }
 
-    // --- SCROLL ACTION REVEALS & NUMBER TICKER MATRIX ---
-    const counterBoxes = document.querySelectorAll('.counter-box');
-    
-    const runCounters = (box) => {
-        const counter = box.querySelector('.stat-number');
-        const target = parseInt(counter.getAttribute('data-target'), 10);
-        let count = 0;
-        const speed = target / 50; 
-        
-        const updateCount = () => {
-            if (count < target) {
-                count += speed;
-                counter.innerText = Math.ceil(count).toLocaleString() + (target === 84 ? 'M+' : target === 94 ? '%' : '+');
-                setTimeout(updateCount, 16);
-            } else {
-                counter.innerText = target.toLocaleString() + (target === 84 ? 'M+' : target === 94 ? '%' : '+');
-            }
+    // ==========================================================================
+    // INTERSECTION OBSERVER PIPELINE
+    // ==========================================================================
+    const initScrollIntersectionObserver = () => {
+        const observerConfig = {
+            threshold: 0.05,
+            rootMargin: '0px 0px -40px 0px'
         };
-        updateCount();
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Kill monitoring overhead once completed
+                }
+            });
+        }, observerConfig);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
     };
 
-    const kpiCounter = document.getElementById('kpiCounter');
-    if (kpiCounter) {
-        setInterval(() => {
-            let cur = parseInt(kpiCounter.innerText, 10);
-            kpiCounter.innerText = cur + Math.floor(Math.random() * 2);
-        }, 4000);
-    }
-
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const trigger = item.querySelector('.faq-trigger');
-        const content = item.querySelector('.faq-content');
-        
-        trigger.addEventListener('click', () => {
-            const isOpen = item.classList.contains('open');
-            faqItems.forEach(i => {
-                i.classList.remove('open');
-                i.querySelector('.faq-content').style.maxHeight = null;
-            });
-            if (!isOpen) {
-                item.classList.add('open');
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        });
-    });
-
-    // Carousel Configuration Viewport
-    const track = document.getElementById('carouselTrack');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentIndex = 0;
-
-    if(track && cards.length > 0) {
-        const updateCarousel = () => { track.style.transform = `translateX(-${currentIndex * 100}%)`; };
-        nextBtn.addEventListener('click', () => { currentIndex = (currentIndex + 1) % cards.length; updateCarousel(); });
-        prevBtn.addEventListener('click', () => { currentIndex = (currentIndex - 1 + cards.length) % cards.length; updateCarousel(); });
-    }
-
-    let countersFired = false;
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                if (entry.target.classList.contains('metrics-section') && !countersFired) {
-                    counterBoxes.forEach(box => runCounters(box));
-                    countersFired = true;
-                }
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    revealElements.forEach(el => revealObserver.observe(el));
-    const metricsSection = document.querySelector('.metrics-section');
-    if (metricsSection) revealObserver.observe(metricsSection);
-
-    // Interactive confirmation handler mockup UI
-    const timeSlots = document.querySelectorAll('.time-slot');
-    timeSlots.forEach(slot => {
-        slot.addEventListener('click', () => {
-            timeSlots.forEach(s => s.classList.remove('active'));
-            slot.classList.add('active');
-        });
-    });
-
-    const bookingAction = document.getElementById('bookingAction');
-    if (bookingAction) {
-        bookingAction.addEventListener('click', () => {
-            bookingAction.innerHTML = 'Session Confirmed <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10.01-3-3"/></svg>';
-            bookingAction.style.background = '#4ade80';
-            bookingAction.style.color = '#0f1117';
-        });
-    }
+    // Launch Application Runtime Core
+    initApp();
 });
